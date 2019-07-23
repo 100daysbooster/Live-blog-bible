@@ -26,37 +26,37 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-74a83fa02566e6b519c6.js"
+    "url": "webpack-runtime-52b64bd7bb1426a36171.js"
   },
   {
-    "url": "styles.c26cb0cd17c498be493a.css"
+    "url": "styles.c7317bfd54bf0742098f.css"
   },
   {
     "url": "styles-f762c57249870ef73b45.js"
   },
   {
-    "url": "app-b0b0cbe19b6634ffcd70.js"
+    "url": "app-e76245a88bd9572c770d.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-a9adb2cc6f1d245419c3.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "0f1a5cc183c3139b41b6a425738e0d9f"
+    "revision": "94f80a30dfbcd517140c58239d82465e"
   },
   {
-    "url": "component---src-pages-404-js-0a63eb06c35529a059cb.js"
+    "url": "component---src-pages-404-js-3b4fd38595b6c83d00e2.js"
   },
   {
     "url": "1-1441fedd6d7871dc4a06.js"
   },
   {
     "url": "page-data/404.html/page-data.json",
-    "revision": "287e85c1d391eef21b2b3a36e748da0c"
+    "revision": "119ac776a2605bfd3f8527cffe903fcd"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "9f241b0314376dd23296af7e9565224d"
+    "revision": "8c193905af078138b5e82b33e0210344"
   },
   {
     "url": "manifest.webmanifest",
@@ -82,7 +82,7 @@ const navigationRoute = new workbox.routing.NavigationRoute(({ event }) => {
   return idbKeyval.get(WHITELIST_KEY).then((customWhitelist = []) => {
     // Respond with the offline shell if we match the custom whitelist
     if (customWhitelist.includes(pathname)) {
-      const offlineShell = `/meetingod/offline-plugin-app-shell-fallback/index.html`
+      const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
       const cacheName = workbox.core.cacheNames.precache
 
       return caches.match(offlineShell, { cacheName }).then(cachedResponse => {
@@ -154,7 +154,7 @@ const messageApi = {
 
     pathnames = pathnames.map(({ pathname, includesPrefix }) => {
       if (!includesPrefix) {
-        return `/meetingod${pathname}`
+        return `${pathname}`
       } else {
         return pathname
       }
