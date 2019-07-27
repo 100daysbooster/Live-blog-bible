@@ -26,37 +26,37 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-1a7d4727081b3705d199.js"
+    "url": "webpack-runtime-55918dad859dd895fe8d.js"
   },
   {
-    "url": "styles.be72e813030b23b29ddd.css"
+    "url": "styles.e576a37e49ce41e6002d.css"
   },
   {
     "url": "styles-df7f38e3dc347c962d15.js"
   },
   {
-    "url": "app-732dbbdb7d0288869681.js"
+    "url": "app-605629f04516f85bc9c8.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-52c885576cb07e3de858.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "5e51f7eeca0531422e54049721c0142b"
+    "revision": "57d2574196e865e9a055ac35cbf9e286"
   },
   {
-    "url": "component---src-pages-404-js-afadbad0b3939711819e.js"
+    "url": "component---src-pages-404-js-327e6dfedebdea9b727d.js"
   },
   {
     "url": "1-e30dfcaf36e78a2c9a61.js"
   },
   {
     "url": "page-data/404.html/page-data.json",
-    "revision": "b36b40deef396b6ed5d0f4e1c955bda3"
+    "revision": "0771a5fb85dd1b5364a959f1c0c8a65b"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "e859e55b92deeeafb24a1a1db94234fb"
+    "revision": "dc6a9008428c4acf29a747baceac380d"
   },
   {
     "url": "manifest.webmanifest",
@@ -82,7 +82,7 @@ const navigationRoute = new workbox.routing.NavigationRoute(({ event }) => {
   return idbKeyval.get(WHITELIST_KEY).then((customWhitelist = []) => {
     // Respond with the offline shell if we match the custom whitelist
     if (customWhitelist.includes(pathname)) {
-      const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+      const offlineShell = `/Live-blog-bible/offline-plugin-app-shell-fallback/index.html`
       const cacheName = workbox.core.cacheNames.precache
 
       return caches.match(offlineShell, { cacheName }).then(cachedResponse => {
@@ -154,7 +154,7 @@ const messageApi = {
 
     pathnames = pathnames.map(({ pathname, includesPrefix }) => {
       if (!includesPrefix) {
-        return `${pathname}`
+        return `/Live-blog-bible${pathname}`
       } else {
         return pathname
       }
