@@ -26,37 +26,37 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-55918dad859dd895fe8d.js"
+    "url": "webpack-runtime-44f7477d3e7d993426a8.js"
   },
   {
-    "url": "styles.e576a37e49ce41e6002d.css"
+    "url": "styles.be72e813030b23b29ddd.css"
   },
   {
     "url": "styles-df7f38e3dc347c962d15.js"
   },
   {
-    "url": "app-605629f04516f85bc9c8.js"
+    "url": "app-732dbbdb7d0288869681.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-52c885576cb07e3de858.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "57d2574196e865e9a055ac35cbf9e286"
+    "revision": "348ed81706f4a409784338f20368c06b"
   },
   {
-    "url": "component---src-pages-404-js-327e6dfedebdea9b727d.js"
+    "url": "component---src-pages-404-js-1a50b94e7c8bf9033e38.js"
   },
   {
-    "url": "1-e30dfcaf36e78a2c9a61.js"
+    "url": "1-2983c1cd0ef69bec6030.js"
   },
   {
     "url": "page-data/404.html/page-data.json",
-    "revision": "0771a5fb85dd1b5364a959f1c0c8a65b"
+    "revision": "6e2bf6db2558f2e412d2b4bad31e0980"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "dc6a9008428c4acf29a747baceac380d"
+    "revision": "b1b7574f4309988438d675a53f622681"
   },
   {
     "url": "manifest.webmanifest",
@@ -82,7 +82,7 @@ const navigationRoute = new workbox.routing.NavigationRoute(({ event }) => {
   return idbKeyval.get(WHITELIST_KEY).then((customWhitelist = []) => {
     // Respond with the offline shell if we match the custom whitelist
     if (customWhitelist.includes(pathname)) {
-      const offlineShell = `/Live-blog-bible/offline-plugin-app-shell-fallback/index.html`
+      const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
       const cacheName = workbox.core.cacheNames.precache
 
       return caches.match(offlineShell, { cacheName }).then(cachedResponse => {
@@ -154,7 +154,7 @@ const messageApi = {
 
     pathnames = pathnames.map(({ pathname, includesPrefix }) => {
       if (!includesPrefix) {
-        return `/Live-blog-bible${pathname}`
+        return `${pathname}`
       } else {
         return pathname
       }
