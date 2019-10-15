@@ -26,30 +26,30 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-ce7f82db5f8368f0081a.js"
+    "url": "webpack-runtime-9ede4b4892a4ef61f9aa.js"
   },
   {
-    "url": "styles.48d7a39d8d7fe1252339.css"
+    "url": "styles.58263d7ddca1f91d6e21.css"
   },
   {
-    "url": "styles-23e58866deab12e1d54d.js"
+    "url": "styles-d334e442995333840ba9.js"
   },
   {
-    "url": "commons-39331a053fe37ffd9ffc.js"
+    "url": "commons-6f8013920ee72a0607ff.js"
   },
   {
-    "url": "app-a71f193bae058c5f4f89.js"
+    "url": "app-60bbcb525c69f90781e8.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-08563098e161ef560594.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "10eaa5c3a735fad8c94de76dcc42969c"
+    "revision": "afba25603c25606b33dc09b3733ea390"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "88ff6d107f3b8af9e733e9cc70cab749"
+    "revision": "f63ae185140bd337d01dd1ff86323a0d"
   },
   {
     "url": "manifest.webmanifest",
@@ -72,12 +72,12 @@ const { NavigationRoute } = workbox.routing
 
 const navigationRoute = new NavigationRoute(async ({ event }) => {
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/Live-blog-bible`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-a71f193bae058c5f4f89.js`))) {
+  if (!resources || !(await caches.match(`/Live-blog-bible/app-60bbcb525c69f90781e8.js`))) {
     return await fetch(event.request)
   }
 
@@ -90,7 +90,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/Live-blog-bible/offline-plugin-app-shell-fallback/index.html`
   return await caches.match(offlineShell)
 })
 
